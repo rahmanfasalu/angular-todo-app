@@ -1,0 +1,21 @@
+.todos-container{
+    position: relative;
+    padding: 32px;
+    .todo-title{
+      border-bottom: 1px solid rgb(237, 237, 237);
+      padding-bottom: 40px;
+    }
+    .add-new-button {
+        position: absolute;
+        right: 32px;
+        top: 32px;
+        color: #FFF;
+        background: #004E52;
+    }
+}
+
+.clear-todo{
+  float: right;
+  color: #AD1D00;
+  cursor: pointer;
+}

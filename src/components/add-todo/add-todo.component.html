@@ -1,0 +1,24 @@
+<div class="todo-container">
+    <h2>{{data.id ? "Update Todo" :'Add Todo'}}</h2>
+    <div>
+        <input 
+            type="text" value="" 
+            class="app-input todo-input"  
+            placeholder="Buy books, Learn python etc..." 
+            [(ngModel)]="data.name"
+        />
+    </div>
+     <div class="buttons"> 
+        <div>
+            <button class="app-button todo-button" (click)="onSubmit()"
+              [ngStyle]="{'opacity':data.name ? 1 : .3 }"   å
+            >{{data.id ? "UPDATE" :'ADD'}}</button>
+        </div>
+        <div>
+            <button class="app-button todo-button app-button-secondary" (click)="onCancel()"
+           
+
+            >Cancel</button>
+        </div>
+    </div>
+</div>

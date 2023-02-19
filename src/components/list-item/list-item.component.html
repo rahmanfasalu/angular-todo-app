@@ -1,0 +1,29 @@
+<div>
+    <div class="todo-filters" *ngIf="todos.length">
+        <div  *ngFor="let fltr of filters" [ngClass]="{'active': fltr === currentFilter}" (click)="currentFilter = fltr">{{fltr}}</div>
+    </div>
+    <div  class="todo-list-container"> 
+    <div  *ngFor="let item of todos | filterResult:'active':currentFilter; let i = index" 
+    [ngClass]="{'disabled': !item.active}" class="todo-list">
+        <button aria-label="completed" class="todo-done todo-status" (click)="removeDone(item)" *ngIf="!item.active">
+            <mat-icon>remove_done</mat-icon>
+        </button>
+        <button aria-label="completed" class="todo-remove-done todo-status" (click)="markAsDone(item)" *ngIf="item.active">
+            <mat-icon>done</mat-icon>
+        </button>
+        <div class="todo-name">{{item.name}}</div>
+        <div class="todo-actions">
+            <button aria-label="completed" class="todo-edit todo-action-button" (click)="editItem(item)" *ngIf="item.active">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button aria-label="completed" class="todo-delete todo-action-button" (click)="deleteItem(item)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf="!todos.length">
+        <h2 class="no-todos">No todos</h2>
+    </div>
+    </div>
+<div> 

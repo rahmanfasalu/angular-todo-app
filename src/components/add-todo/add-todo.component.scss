@@ -1,0 +1,30 @@
+.todo-container{
+    padding: 25px;
+    background: #FDFDFD;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    min-width: 80%;
+    h2{
+           color: rgb(36, 36, 36);
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+            font-style: normal;
+            align-items: center;
+            font-weight: 500;
+       
+    }
+    .todo-input {
+          min-height: 50px;
+          padding: 10px;
+          max-width: calc(100% - 20px);
+    }
+  .buttons {
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+                  gap: 10px;
+  }
+}
+
